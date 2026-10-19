@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magic Blue Rose · 魔法蓝玫瑰</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div id="container">
+      <video id="video" playsinline muted></video>
+      <canvas id="canvas"></canvas>
+      <div id="topUI"><div id="status">点击开始</div></div>
+      <div id="progressWrap">
+        <div id="pct">0%</div>
+        <div id="pbar"><div id="pfill"></div></div>
+        <div id="ptxt">准备中...</div>
+        <div id="pstep"></div>
+        <button id="retryBtn" onclick="retryCamera()">重新请求摄像头</button>
+        <button
+          id="forceCamBtn"
+          style="
+            display: none;
+            margin-top: 10px;
+            padding: 10px 28px;
+            font-size: 14px;
+            color: #fff;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border: none;
+            border-radius: 18px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+          "
+          onclick="forceRequestCamera()"
+        >
+          点击允许摄像头
+        </button>
+      </div>
+      <button id="startBtn" onclick="handleStart()">开启魔法玫瑰</button>
+      <div id="fps"></div>
+      <div id="hint">
+        张合手掌控制大小 · 左右移动控制旋转<br />也可触摸拖拽操作
+      </div>
+    </div>
+
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>
